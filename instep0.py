@@ -75,3 +75,32 @@ for key,value in labelsets:
 
 
 train, val, test = generate_splits(image_paths, [0.5,0.33,0.16])
+
+def load_model(sess, model_path, tensor_names,model_tag):
+    """
+    Load Pretrained VGG Model into TensorFlow.
+    :param sess: TensorFlow Session
+    :param vgg_path: Path to vgg folder, containing "variables/" and "saved_model.pb"
+    :return: Tuple of Tensors from VGG model (image_input, keep_prob, layer3_out, layer4_out, layer7_out)
+    """
+    # TODO: Implement function
+    #   Use tf.saved_model.loader.load to load the model and weights
+#    vgg_tag = model_tag
+#    vgg_input_tensor_name = 'image_input:0'
+#    vgg_keep_prob_tensor_name = 'keep_prob:0'
+#    vgg_layer3_out_tensor_name = 'layer3_out:0'
+#    vgg_layer4_out_tensor_name = 'layer4_out:0'
+#    vgg_layer7_out_tensor_name = 'layer7_out:0'
+
+    tf.saved_model.loader.load(sess, [model_tag], model_path)
+    model_graph = tf.get_default_graph()
+    tensors=[]
+    for tensor_name in tensor_names:
+        tensors.append(model_graph.get_tensor_by_name(tensor_name+":0"))
+    return tensors
+        
+#tests.test_load_vgg(load_vgg, tf
+def layers():
+    # TODO: Implementing function
+    # This Funciton is for removing the last layers from loaded model
+    pass
