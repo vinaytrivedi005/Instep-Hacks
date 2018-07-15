@@ -1,0 +1,7 @@
+ImageName|Label
+dataset\abcd.jpg|[15,30,100,100,Square]
+dataset\abcde.jpg|[15,30,100,100,Square],[125,135,100,200,Rectangle]
+dataset\abcd1.jpg|[15,30,100,100,Circle]
+dataset\abcde1.jpg|[15,30,100,100,Circle],[125,135,100,200,Triangle]
+dataset\abcd2.jpg|[15,30,100,100,Triangle]
+dataset\abcde2.jpg|[15,30,100,100,Square],[125,135,100,200,Circle]
